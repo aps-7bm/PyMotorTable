@@ -234,8 +234,9 @@ class MainFrame(wx.Frame):
         #Compute size of the top and bottom panels.  Make it a minimum of zero.
         panel_v_size = (total_size[1]-text_height)/2 if total_size[1] > text_height else 0
         dummy1 = wx.Panel(local_panel,-1,size=(total_size[0],panel_v_size))
+        dummy2 = wx.Panel(local_panel,-1,size=(total_size[0],panel_v_size))
         local_text = GenStaticText(local_panel,-1,label,size=(total_size[0],text_height),style=flag)
-        entries=[dummy1,local_text,dummy1]
+        entries=[dummy1,local_text,dummy2]
         proportions = [1,0,1]
         for entry,prop in zip(entries,proportions):
             entry.SetBackgroundColour(bg_color)
